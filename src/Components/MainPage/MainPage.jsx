@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import WelcomeText from "../WeclomeText/WelcomeText";
 import DragonOverview from "../DragonOverview/DragonOverview";
 import Slider from "../Carousel/Carousel";
-import {Divider, Spin} from "antd";
+import {Divider} from "antd";
 import 'antd/dist/antd.dark.css';
 
 

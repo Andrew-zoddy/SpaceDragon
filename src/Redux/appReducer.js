@@ -1,7 +1,7 @@
 //Types
 
 import {dragonAPI} from "./api/dragonEndpoints";
-import {setDragon} from "./dragonReducer";
+
 
 const SET_ERROR_DATA = 'APP/SET_ERROR_DATA'
 const SET_SUCCESS = 'APP/SET_SUCCESS'

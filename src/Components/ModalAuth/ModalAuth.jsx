@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import css from './ModalAuth.module.scss'
-import {Button, Checkbox, Form, Input, message} from 'antd';
+import {Button, Checkbox, Form, Input} from 'antd';
 import {useDispatch} from "react-redux";
 import {loggingIn} from "../../Redux/appReducer";
 

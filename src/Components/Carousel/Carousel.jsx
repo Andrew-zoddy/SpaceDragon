@@ -6,8 +6,9 @@ import {Carousel} from "antd";
 const Slider = ({dragonData}) => {
 
     const {
-        flickr_images: [dragonImage = '', ...tailImages] = [],
+        flickr_images: [...tailImages] = [],
     } = dragonData || {}
+
 
     return (
         <div style={{width:'90%', margin:'0 auto'}}>

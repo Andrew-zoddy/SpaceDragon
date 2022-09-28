@@ -34,9 +34,9 @@ const DragonOverview = React.forwardRef(({
         } = {},
         dry_mass_kg: dragonMassDry = 0,
         first_flight: dragonFirstFlight = '',
-        flickr_images: [dragonImage = '', ...tailImages] = [],
+        flickr_images: [dragonImage = ''] = [],
         wikipedia: dragonWiki = '',
-        ...tail
+
     } = overViewVisible ? clickedDragonData : dragonDataOverview || {};
 
 
