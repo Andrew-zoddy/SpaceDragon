@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.dark.css';
 import css from './AllDragonsList.module.scss'
-import Preloader from "../Preloader/Preloader";
+
 
 
 const AllDragonsList = ({allDragonsData, onDragonClick,loading}) => {
@@ -11,7 +11,7 @@ const AllDragonsList = ({allDragonsData, onDragonClick,loading}) => {
 
     return (
         <div className={css.allDragons_wrapper}>
-            {loading ? <Preloader/> :
+            {loading ? '' :
             allDragonsData.map(dr => {
                 const [, second] = dr.flickr_images;
                 return <div

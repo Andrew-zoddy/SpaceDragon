@@ -61,7 +61,7 @@ const App = () => {
     return (
 
         <div className='app_wrapper'>
-            {loading && <Preloader/>}
+            {loading && <Preloader/> }
             <NavBar
                 setOverViewVisible={setOverViewVisible}
                 setModalVisible={setModalVisible}
@@ -69,7 +69,7 @@ const App = () => {
 
             />
             {modalVisible && <ModalAuth setModalVisible={setModalVisible}/>}
-            <Routes>
+            {loading ? '' : <Routes>
                 <Route
                     element={
                         <MainPage
@@ -94,7 +94,8 @@ const App = () => {
                 <Route element={<div style={{textAlign: "center", fontSize: '2rem', margin: '25%'}}>ERROR 404 - page not
                     found</div>}
                        path={'/*'}/>
-            </Routes>
+            </Routes>}
+
         </div>
     );
 };

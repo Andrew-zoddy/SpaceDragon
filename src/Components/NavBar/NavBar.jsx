@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import css from './NavBar.module.scss'
 import logo from '../../images/spacex_logo_black.png'
 import Mybutton from "../UI_Elements/Mybutton";
@@ -33,6 +33,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
     const logOut = () => {
         dispatch(setAuth(false))
         localStorage.removeItem('token')
+        localStorage.removeItem('isAuth')
         message.error('You were logged out');
         setShowBurgerVisible(false)
     };
@@ -42,13 +43,14 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
         setShowBurgerVisible(false)
     }
 
-    // this is a trick to rerender а page -
+    // this was a trick to rerender а page -
     // thus useEffect doesn't work with already "false" isAuth key in redux after page reload
-    // it was made only because of lack of the backEnd Base
-    useEffect(() => {
-        if (!localStorage.getItem('token')) {
-        }
-    }, [dispatch])
+    // it was made as a test for  only because of lack of the backEnd Base
+
+    // useEffect(() => {
+    //     if (!localStorage.getItem('token')) {
+    //     }
+    // }, [dispatch])
 
 
     return (

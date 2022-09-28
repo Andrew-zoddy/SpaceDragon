@@ -14,7 +14,7 @@ const initialState = {
     error: '',
     success: '',
     loading: false,
-    isAuth: localStorage.getItem('isAuth'),
+    isAuth: localStorage.getItem('isAuth') || false
 };
 
 //Reducer
@@ -44,6 +44,7 @@ export const loggingIn = (userParams) => async (dispatch) => {
             const response = await dragonAPI.logIn(userParams);
             if (response.status === 200) {
                 dispatch(setAuth(true))
+                localStorage.setItem('isAuth', JSON.stringify(true));
                 localStorage.setItem('token', JSON.stringify(response.data));
                 dispatch(setLoading(false))
                 dispatch(setSuccess('Hello John)'))
