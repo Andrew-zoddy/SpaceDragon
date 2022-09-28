@@ -1,0 +1,24 @@
+.burger_menuWrapper{
+  position: fixed;
+  right: 0;
+  top: 0;
+  // ulbi animation here
+  .burger_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+    height: 100vh;
+    width: 35vh;
+    background: #747575;
+    z-index: 900000;
+  }
+  @media (min-width: 810px) {
+    display: none;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+.allDragons_wrapper {
+  padding-top: 1rem;
+
+  .item_container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 2rem;
+
+    &:hover {
+      background-color: #817e7e;
+      color: black;
+      box-shadow: 1px 1px 15px grey;
+      cursor: pointer;
+    }
+
+    .item_title {
+      font-size: 2rem;
+    }
+
+    .item_description {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 641px) {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+
+  .item_image {
+    object-fit: cover;
+    width: 100%;
+    height: 40vh;
+    padding: 1rem;
+  }
+
+}
