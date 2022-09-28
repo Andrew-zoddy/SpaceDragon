@@ -27,7 +27,7 @@ const ModalAuth = ({setModalVisible}) => {
                 <Form
                     name="basic"
                     labelCol={{
-                        span: 8,
+                        span: 7,
                     }}
                     wrapperCol={{
                         span: 16,

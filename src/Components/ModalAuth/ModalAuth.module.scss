@@ -7,7 +7,7 @@
   z-index: 9999;
   display: flex;
   justify-content: center;
-  background-color: rgba(2, 2, 2, 0.56);
+  background-color: rgba(2, 2, 2, 0.79);
   .modal_container{
     display: flex;
     flex-direction: column;
@@ -16,9 +16,10 @@
     position: fixed;
     top: 50%;
     transform: translate(0, -50%);
-    width: 50vh;
-    height: 40vh;
+    width: 375px;
+    height: 400px;
     background-color: #757272;
     border-radius: 25px;
+    padding: 1rem;
   }
 }
