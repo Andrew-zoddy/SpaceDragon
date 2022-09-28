@@ -70,7 +70,8 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
 
                         <div onClick={() => setShowBurgerVisible(false)} className={css.burger_closeBtn}>X</div>
                         <NavLink style={{color: 'white'}} to={'/'}>
-                            <div onClick={() => setShowBurgerVisible(false)} className={css.menu_item_burger}>Dragon</div>
+                            <div onClick={() => setShowBurgerVisible(false)} className={css.menu_item_burger}>Dragon
+                            </div>
                         </NavLink>
                         <NavLink style={{color: 'white'}} to={'/dragonList'}>
                             <div onClick={() => onLinkClick()} className={css.menu_item_burger}>All Dragons List</div>
@@ -85,7 +86,8 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                             :
                             <div className={css.logged_user_burger}>
                                 <p className={css.users_name_burger}>"Hi, John"</p>
-                                <Mybutton><span className={css.logoutBtn}  onClick={() => logOut()}>Logout</span></Mybutton>
+                                <Mybutton><span className={css.logoutBtn}
+                                                onClick={() => logOut()}>Logout</span></Mybutton>
                             </div>
                         }
                     </BurgerMenu>
@@ -98,11 +100,17 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                 </div>
                 <menu className={css.menu_container}>
                     <NavLink style={{color: 'white'}} to={'/'}>
-                        <div  className={css.menu_item}>Dragon</div>
+                        <div className={css.menu_item}>Dragon</div>
                     </NavLink>
                     <NavLink style={{color: 'white'}} to={'/dragonList'}>
                         <div onClick={() => setOverViewVisible(false)} className={css.menu_item}>All Dragons List</div>
                     </NavLink>
+                    {
+                        isAuth &&
+                        <NavLink style={{color: 'white'}} to={'/myProfile'}>
+                            <div onClick={null} className={css.menu_item}>Profile</div>
+                        </NavLink>
+                    }
                 </menu>
                 {!isAuth && !JSON.parse(localStorage.getItem('token'))
                     ?
@@ -114,7 +122,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     :
                     <div className={css.logged_user}>
                         <p className={css.users_name}>"Hi, John"</p>
-                        <Mybutton><span  onClick={() => logOut()}>Logout</span></Mybutton>
+                        <Mybutton><span onClick={() => logOut()}>Logout</span></Mybutton>
                     </div>
                 }
 

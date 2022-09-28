@@ -24,21 +24,25 @@
     .menu_container {
       display: flex;
       align-items: center;
+      width: 50%;
+      justify-content: space-evenly;
 
       .menu_item {
-        padding-left: 3rem;
-        margin-right: 3rem;
+
         font-size: 1.2rem;
         text-transform: uppercase;
+
         &:hover {
           text-shadow: 1px 2px 10px white;
         }
+
         //@media (min-width: 721px) {
         //  padding-left: 0;
         //
         //}
       }
-      @media (max-width: 810px) {
+
+      @media (max-width: 823px) {
         display: none;
       }
     }
@@ -47,20 +51,24 @@
     .signUp_block {
       display: flex;
       align-items: center;
-      @media (max-width: 810px) {
+      @media (max-width: 823px) {
         display: none;
       }
     }
-    .logged_user{
+
+    .logged_user {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       font-size: 1.2rem;
-      .users_name{
+      width: 190px;
+
+      .users_name {
         text-shadow: 1px 2px 10px white;
         margin-bottom: 0;
       }
-      @media (max-width: 810px) {
+
+      @media (max-width: 823px) {
         display: none;
       }
     }
@@ -69,20 +77,18 @@
 }
 
 
-
-
-
-.burgerBtn_wrapper{
+.burgerBtn_wrapper {
   position: fixed;
   top: 1rem;
   right: 2rem;
   cursor: pointer;
   font-size: 2.5rem;
 
-  &:hover{
+  &:hover {
     font-size: 2.6rem;;
   }
-  @media (min-width: 810px) {
+
+  @media (min-width: 823px) {
     display: none;
   }
 }
@@ -99,37 +105,38 @@
   }
 }
 
-  .signUp_block_burger {
-    display: flex;
+.signUp_block_burger {
+  display: flex;
 
-    margin-top: 10%;
-    align-items: center;
-    @media (min-width: 810px) {
-      display: none;
-    }
+  margin-top: 10%;
+  align-items: center;
+  @media (min-width: 823px) {
+    display: none;
+  }
+}
+
+.logged_user_burger {
+  font-size: 1.8rem;
+
+  .users_name_burger {
+    margin-top: 10rem;
+    text-shadow: 1px 2px 10px white;
   }
 
-  .logged_user_burger {
-    font-size: 1.8rem;
-
-    .users_name_burger {
-      margin-top:10rem;
-      text-shadow: 1px 2px 10px white;
-    }
-
-    @media (min-width: 810px) {
-      display: none;
-    }
+  @media (min-width: 823px) {
+    display: none;
   }
-.logoutBtn{
+}
+
+.logoutBtn {
   font-size: 1.7rem;
 }
 
-  .burger_closeBtn {
-    position: fixed;
-    right: 1rem;
-    width: 3rem;
-    font-size: 4rem;
-    font-family: Lato, sans-serif;
-    cursor: pointer;
-  }
+.burger_closeBtn {
+  position: fixed;
+  right: 1rem;
+  width: 3rem;
+  font-size: 4rem;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}

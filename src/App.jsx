@@ -61,7 +61,7 @@ const App = () => {
     return (
 
         <div className='app_wrapper'>
-            {loading && <Preloader/> }
+            {loading && <Preloader/>}
             <NavBar
                 setOverViewVisible={setOverViewVisible}
                 setModalVisible={setModalVisible}

@@ -98,7 +98,8 @@ const ModalAuth = ({setModalVisible}) => {
                         </Button>
 
                     </Form.Item>
-                    <p>Sorry, but credentials are hardcoded - though it works as if you have an account with token (you can
+                    <p>Sorry, but credentials are hardcoded - though it works as if you have an account with token (you
+                        can
                         look through Network)</p>
                 </Form>
             </div>
