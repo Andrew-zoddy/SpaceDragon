@@ -65,6 +65,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                 {
                     showBurgerVisible &&
                     <BurgerMenu>
+
                         <div onClick={() => setShowBurgerVisible(false)} className={css.burger_closeBtn}>X</div>
                         <NavLink style={{color: 'white'}} to={'/'}>
                             <div onClick={() => setShowBurgerVisible(false)} className={css.menu_item_burger}>Dragon</div>
@@ -82,7 +83,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                             :
                             <div className={css.logged_user_burger}>
                                 <p className={css.users_name_burger}>"Hi, John"</p>
-                                <Mybutton><span onClick={() => logOut()}>Logout</span></Mybutton>
+                                <Mybutton><span className={css.logoutBtn}  onClick={() => logOut()}>Logout</span></Mybutton>
                             </div>
                         }
                     </BurgerMenu>
@@ -111,7 +112,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     :
                     <div className={css.logged_user}>
                         <p className={css.users_name}>"Hi, John"</p>
-                        <Mybutton><span onClick={() => logOut()}>Logout</span></Mybutton>
+                        <Mybutton><span  onClick={() => logOut()}>Logout</span></Mybutton>
                     </div>
                 }
 

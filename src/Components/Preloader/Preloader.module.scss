@@ -1,11 +1,12 @@
 .preloader_wrapper{
   position: fixed;
-  width: 20rem;
-  height: 20rem;
-  top: 50%;
+  width: 100%;
+  height: 100%;
+  top: 50vh;
   bottom: 0;
-  left: 50%;
+  left: 47%;
   right: 0;
+  //transform: translate(-50%,-50%);
   //.preloader_element{
   //  width: 100%;
   //}

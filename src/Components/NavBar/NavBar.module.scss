@@ -14,8 +14,10 @@
     .logo_block {
 
       .logo {
+        position: relative;
         width: 200px;
         transform: translate(0, -20%);
+        z-index: 1;
       }
     }
 
@@ -84,8 +86,8 @@
 .menu_item_burger {
   padding-left: 1rem;
   margin-right: 1rem;
-  padding-top: 1rem;
-  font-size: 1.2rem;
+  padding-top: 4rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 
   &:hover {
@@ -95,6 +97,7 @@
 
   .signUp_block_burger {
     display: flex;
+
     margin-top: 10%;
     align-items: center;
     @media (min-width: 810px) {
@@ -103,7 +106,7 @@
   }
 
   .logged_user_burger {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 
     .users_name_burger {
       margin-top:10rem;
@@ -114,12 +117,15 @@
       display: none;
     }
   }
+.logoutBtn{
+  font-size: 1.7rem;
+}
 
   .burger_closeBtn {
     position: fixed;
     right: 1rem;
     width: 3rem;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: Lato, sans-serif;
     cursor: pointer;
   }
