@@ -89,7 +89,7 @@ const App = () => {
                                           overViewVisible={overViewVisible}
                                           setOverViewVisible={setOverViewVisible}
                         />
-                } exact path={'/dragonlist'}
+                } exact path={'/dragonList'}
                 />
                 <Route element={<div style={{textAlign: "center", fontSize: '2rem', margin: '25%'}}>ERROR 404 - page not
                     found</div>}

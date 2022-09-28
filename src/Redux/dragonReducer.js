@@ -39,7 +39,6 @@ export const getDragonsData = () => async (dispatch) => {
                 dispatch(setSuccess('Dragons Loaded!)'))
 
             }
-            console.log('timeout for loading func')
         }, 1000);
 
     } catch (error) {
@@ -54,21 +53,21 @@ export const setDragon = (data) => {
     }
 }
 //================================================
-
+// setTimeout(async () => {  }, 1000);
 // getting  all dragons data actions + thunk
 export const getAllDragonsData = () => async (dispatch) => {
     try {
         dispatch(setError(''))
         dispatch(setSuccess(''))
-        // setting time out for emulating server delay
-        setTimeout(async () => {
+        // setting time out for emulating server delay (just for making spinner visible)
+
             const response = await dragonAPI.getAllDragons();
             if (response.status === 200) {
                 localStorage.setItem('allDragonsData', JSON.stringify(response.data));
                 dispatch(setAllDragons(response.data))
 
             }
-        }, 1000);
+
 
     } catch (error) {
         dispatch(setError(error))

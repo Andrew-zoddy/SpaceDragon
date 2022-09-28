@@ -10,7 +10,7 @@ import {MenuOutlined} from "@ant-design/icons";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 
-const NavBar = ({setOverViewVisible, setModalVisible, loading}) => {
+const NavBar = ({setOverViewVisible, setModalVisible}) => {
     const dispatch = useDispatch()
     // authorisation  state flag
     const isAuth = useSelector(state => state.app.isAuth)
@@ -69,7 +69,7 @@ const NavBar = ({setOverViewVisible, setModalVisible, loading}) => {
                         <NavLink style={{color: 'white'}} to={'/'}>
                             <div onClick={() => setShowBurgerVisible(false)} className={css.menu_item_burger}>Dragon</div>
                         </NavLink>
-                        <NavLink style={{color: 'white'}} to={'/dragonlist'}>
+                        <NavLink style={{color: 'white'}} to={'/dragonList'}>
                             <div onClick={() => onLinkClick()} className={css.menu_item_burger}>All Dragons List</div>
                         </NavLink>
                         {!isAuth && !JSON.parse(localStorage.getItem('token'))
@@ -97,7 +97,7 @@ const NavBar = ({setOverViewVisible, setModalVisible, loading}) => {
                     <NavLink style={{color: 'white'}} to={'/'}>
                         <div  className={css.menu_item}>Dragon</div>
                     </NavLink>
-                    <NavLink style={{color: 'white'}} to={'/dragonlist'}>
+                    <NavLink style={{color: 'white'}} to={'/dragonList'}>
                         <div onClick={() => setOverViewVisible(false)} className={css.menu_item}>All Dragons List</div>
                     </NavLink>
                 </menu>
