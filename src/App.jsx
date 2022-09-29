@@ -19,8 +19,12 @@ import WelcomeMessage from "./Components/WelcomeMessage/WelcomeMessage";
 const App = () => {
     // declaring variables for data in Redux State
     const dispatch = useDispatch()
+
+    const isAuth = useSelector(state => state.app.isAuth)
+
     const dragonData = useSelector(state => state.dragonData.dragonData)
     const allDragonsData = useSelector(state => state.dragonData.allDragons)
+
     const userData = useSelector(state => state.user.userData)
 
     //  setting All dragons List Detailed info visible
@@ -46,8 +50,9 @@ const App = () => {
     }, [dispatch])
     //getting user data
     useEffect(() => {
+        if (!isAuth) return
         dispatch(getUserData())
-    },[dispatch])
+    },[dispatch, isAuth])
     //Success tracking
     useEffect(() => {
         if (!success) return
@@ -66,6 +71,7 @@ const App = () => {
         setClickedDragonData(chosenDragon)
     }
 
+    // console.log(isAuth)
 
     return (
 
