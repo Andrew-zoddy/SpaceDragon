@@ -22,7 +22,7 @@ const Slider = ({dragonData}) => {
                                 {
                                     objectFit:'contain',
                                     width:'90vh',
-                                    height:'50vh'
+                                    height:'65vh'
 
                                 }} src={i} alt={'img' + i}/>
                         </div>)
