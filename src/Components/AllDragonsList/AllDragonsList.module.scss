@@ -3,7 +3,9 @@
 
   .item_container {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 4fr 1fr;
+    align-content: center;
+    justify-items: center;
     padding: 2rem;
 
     &:hover {
@@ -31,7 +33,7 @@
   .item_image {
     object-fit: cover;
     width: 100%;
-    height: 40vh;
+    //height: 40vh;
     padding: 1rem;
   }
 

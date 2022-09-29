@@ -4,10 +4,13 @@
   background: rgba(16, 68, 50, 0.4);
   height: 100vh;
   .profile_container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     justify-content: space-around;
     align-items: center;
-    padding-top: 3rem;
+    padding: 2rem;
+
 
     .info_block{
       display: grid;
@@ -44,7 +47,9 @@
         width: 100%;
       }
     }
+
     @media (max-width: 823px) {
+      display: flex;
       flex-direction: column;
     }
   }
