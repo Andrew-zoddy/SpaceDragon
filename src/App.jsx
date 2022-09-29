@@ -11,6 +11,9 @@ import {getAllDragonsData, getDragonsData} from "./Redux/dragonReducer";
 import DragonOverview from "./Components/DragonOverview/DragonOverview";
 import ModalAuth from "./Components/ModalAuth/ModalAuth";
 import Preloader from "./Components/Preloader/Preloader";
+import MyProfile from "./Components/MyProfile/MyProfile";
+import {getUserData} from "./Redux/usersReducer";
+import WelcomeMessage from "./Components/WelcomeMessage/WelcomeMessage";
 
 
 const App = () => {
@@ -18,6 +21,8 @@ const App = () => {
     const dispatch = useDispatch()
     const dragonData = useSelector(state => state.dragonData.dragonData)
     const allDragonsData = useSelector(state => state.dragonData.allDragons)
+    const userData = useSelector(state => state.user.userData)
+
     //  setting All dragons List Detailed info visible
     const [overViewVisible, setOverViewVisible] = useState(false)
     // getting data from clicked item in All dragons List
@@ -39,6 +44,10 @@ const App = () => {
     useEffect(() => {
         dispatch(getAllDragonsData())
     }, [dispatch])
+    //getting user data
+    useEffect(() => {
+        dispatch(getUserData())
+    },[dispatch])
     //Success tracking
     useEffect(() => {
         if (!success) return
@@ -70,6 +79,7 @@ const App = () => {
             />
             {modalVisible && <ModalAuth setModalVisible={setModalVisible}/>}
             {loading ? '' : <Routes>
+                <Route element={<WelcomeMessage />} exact path={'/'}/>
                 <Route
                     element={
                         <MainPage
@@ -77,7 +87,7 @@ const App = () => {
                             modalVisible={modalVisible}
                             dragonData={dragonData}
                             setModalVisible={setModalVisible}
-                        />} exact path={'/'}/>
+                        />} exact path={'/main'}/>
                 <Route element={
                     !overViewVisible
                         ?
@@ -91,9 +101,11 @@ const App = () => {
                         />
                 } exact path={'/dragonList'}
                 />
+                <Route element={<MyProfile userData={userData} />} exact path={'/myProfile'}/>
                 <Route element={<div style={{textAlign: "center", fontSize: '2rem', margin: '25%'}}>ERROR 404 - page not
                     found</div>}
                        path={'/*'}/>
+
             </Routes>}
 
         </div>

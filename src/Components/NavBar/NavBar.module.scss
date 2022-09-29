@@ -3,12 +3,16 @@
   .navBar_container {
     background: transparent;
     padding: 1rem 1rem 1rem 2rem;
-    color: white;
+    //color: white;
     height: 6rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
+  .nav_link_style{
+    color: white;
+  }
 
 
     .logo_block {
@@ -25,21 +29,19 @@
       display: flex;
       align-items: center;
       width: 50%;
-      justify-content: space-evenly;
+      justify-content: flex-start;
 
       .menu_item {
-
         font-size: 1.2rem;
+
+        margin-right: 2rem;
         text-transform: uppercase;
-
         &:hover {
-          text-shadow: 1px 2px 10px white;
+          text-shadow: 1px 5px 20px white;
         }
+      }
+      .menu_item_invisible{
 
-        //@media (min-width: 721px) {
-        //  padding-left: 0;
-        //
-        //}
       }
 
       @media (max-width: 823px) {
@@ -129,7 +131,7 @@
 }
 
 .logoutBtn {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 
 .burger_closeBtn {
@@ -140,3 +142,4 @@
   font-family: Lato, sans-serif;
   cursor: pointer;
 }
+

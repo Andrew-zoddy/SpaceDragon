@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import css from './NavBar.module.scss'
 import logo from '../../images/spacex_logo_black.png'
 import Mybutton from "../UI_Elements/Mybutton";
-import {NavLink, useNavigate} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setAuth} from "../../Redux/appReducer";
 import {message} from "antd";
@@ -43,16 +43,6 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
         setShowBurgerVisible(false)
     }
 
-    // this was a trick to rerender а page -
-    // thus useEffect doesn't work with already "false" isAuth key in redux after page reload
-    // it was made as a test for  only because of lack of the backEnd Base
-
-    // useEffect(() => {
-    //     if (!localStorage.getItem('token')) {
-    //     }
-    // }, [dispatch])
-
-
     return (
         <div className={css.navBar_wrapper}>
             <div className={css.navBar_container}>
@@ -62,20 +52,28 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                 <div
                     onClick={() => setShowBurgerVisible(true)}
                     className={css.burgerBtn_wrapper}>
-                    <MenuOutlined/>
+                    {/*button toggle*/}
+                    {!showBurgerVisible ? <MenuOutlined/> : '' }
+
                 </div>
                 {
                     showBurgerVisible &&
                     <BurgerMenu>
 
                         <div onClick={() => setShowBurgerVisible(false)} className={css.burger_closeBtn}>X</div>
-                        <NavLink style={{color: 'white'}} to={'/'}>
+                        <NavLink style={{color: 'white'}} to={'/main'}>
                             <div onClick={() => setShowBurgerVisible(false)} className={css.menu_item_burger}>Dragon
                             </div>
                         </NavLink>
                         <NavLink style={{color: 'white'}} to={'/dragonList'}>
                             <div onClick={() => onLinkClick()} className={css.menu_item_burger}>All Dragons List</div>
                         </NavLink>
+                        {
+                            isAuth &&
+                            <NavLink style={{color: 'whitesmoke'}} to={'/myProfile'}>
+                                <div onClick={onLinkClick} className={!isAuth ? css.menu_item_invisible : css.menu_item_burger}>Profile</div>
+                            </NavLink>
+                        }
                         {!isAuth && !JSON.parse(localStorage.getItem('token'))
                             ?
                             <div className={css.signUp_block_burger}>
@@ -86,8 +84,8 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                             :
                             <div className={css.logged_user_burger}>
                                 <p className={css.users_name_burger}>"Hi, John"</p>
-                                <Mybutton><span className={css.logoutBtn}
-                                                onClick={() => logOut()}>Logout</span></Mybutton>
+                                <Mybutton><Link to={'/'} className={css.logoutBtn}
+                                                onClick={() => logOut()}>Logout</Link></Mybutton>
                             </div>
                         }
                     </BurgerMenu>
@@ -99,16 +97,16 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     <img className={css.logo} src={logo} alt="logo"/>
                 </div>
                 <menu className={css.menu_container}>
-                    <NavLink style={{color: 'white'}} to={'/'}>
+                    <NavLink to={'/main'}>
                         <div className={css.menu_item}>Dragon</div>
                     </NavLink>
-                    <NavLink style={{color: 'white'}} to={'/dragonList'}>
+                    <NavLink to={'/dragonList'}>
                         <div onClick={() => setOverViewVisible(false)} className={css.menu_item}>All Dragons List</div>
                     </NavLink>
                     {
                         isAuth &&
-                        <NavLink style={{color: 'white'}} to={'/myProfile'}>
-                            <div onClick={null} className={css.menu_item}>Profile</div>
+                        <NavLink  to={'/myProfile'}>
+                            <div onClick={onLinkClick} className={!isAuth ? css.menu_item_invisible : css.menu_item}>Profile</div>
                         </NavLink>
                     }
                 </menu>
@@ -122,7 +120,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     :
                     <div className={css.logged_user}>
                         <p className={css.users_name}>"Hi, John"</p>
-                        <Mybutton><span onClick={() => logOut()}>Logout</span></Mybutton>
+                        <Mybutton><Link to={'/'} onClick={() => logOut()}>Logout</Link></Mybutton>
                     </div>
                 }
 

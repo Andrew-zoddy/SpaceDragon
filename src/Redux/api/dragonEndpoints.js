@@ -13,6 +13,10 @@ export const dragonAPI = {
     logIn(userParams) {
         return axios.post('https://fakestoreapi.com/auth/login', {username: userParams.username, password: userParams.password} )
             .then(response => response)
+    },
+    getUser() {
+        return axios.get('https://fakestoreapi.com/users/1')
+            .then(response => response)
     }
 }
 

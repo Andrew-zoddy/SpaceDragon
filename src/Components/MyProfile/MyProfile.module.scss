@@ -1,0 +1,51 @@
+.profile_wrapper{
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(16, 68, 50, 0.4);
+  height: 100vh;
+  .profile_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3rem;
+
+    .info_block{
+      display: grid;
+      grid-template-rows: 1fr 4fr;
+      font-size: 1.7rem;
+      .users_info{
+        width: 50vh;
+        .table_wrap{
+          width: 100%;
+          margin-bottom: 3rem;
+          .table_body{
+
+            .table_row{
+
+              .table_item{
+                border-bottom: 1px solid grey;
+
+              }
+            }
+          }
+        }
+
+        .buttons_block{
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+        }
+      }
+    }
+    .image_block{
+
+      .image_item{
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    @media (max-width: 823px) {
+      flex-direction: column;
+    }
+  }
+}

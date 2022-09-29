@@ -26,7 +26,6 @@ nav, footer, header, aside {
 html, body {
     height: 100%;
     width: 100%;
-    font-size: 100%;
     line-height: 15px;
     font-size: 14px;
     font-family: Lato, sans-serif;
@@ -83,10 +82,17 @@ h1, h2, h3, h4, h5, h6 {
     background-position: top;
     background-size: 50%;
     background-repeat: no-repeat;
-    background-position-x: 110%;
+    background-position-x: 115%;
     padding-bottom: 2rem;
 
 
 }
 
 
+.active{
+    color: white;
+}
+
+a {
+    color: green;
+}
