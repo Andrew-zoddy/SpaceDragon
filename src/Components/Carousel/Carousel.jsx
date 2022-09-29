@@ -11,7 +11,7 @@ const Slider = ({dragonData}) => {
 
 
     return (
-        <div style={{width:'90%', margin:'0 auto'}}>
+        <div style={{width:'90vh', height:'50vh', margin:'0 auto'}}>
             <Carousel
                 dotPosition='top'
                 autoplay={true}>
@@ -20,8 +20,9 @@ const Slider = ({dragonData}) => {
                         <div key={i}>
                             <img style={
                                 {
-                                    objectFit: 'cover',
-                                    width: '100%',
+                                    objectFit:'contain',
+                                    width:'90vh',
+                                    height:'50vh'
 
                                 }} src={i} alt={'img' + i}/>
                         </div>)
