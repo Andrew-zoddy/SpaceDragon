@@ -12,39 +12,39 @@ const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
     const [form] = Form.useForm()
 
 
-    //set values into form
-    useEffect(() => {
-
-        {
-
-            form.setFieldsValue({
-                email: destructedUserData.userEmail,
-                username: destructedUserData.userUsername,
-                password: destructedUserData.userPass,
-                name: {
-                    firstname: destructedUserData.userFirstname,
-                    lastname:destructedUserData.userLastname,
-                },
-                address:
-                    {
-                        city: destructedUserData.userCity,
-                        street: destructedUserData.userStreet,
-                        number: destructedUserData.userStreetNumber,
-                        zipcode: destructedUserData.userZipcode,
-                        geolocation:
-                            {
-                                lat :  destructedUserData.lAt,
-                                long : destructedUserData.lOng,
-
-                            }
-                    },
-
-                phone:destructedUserData.userTel,
-            }
-            )
-
-
-    }}, [destructedUserData, form])
+    // //set values into form
+    // useEffect(() => {
+    //
+    //     {
+    //
+    //         form.setFieldsValue({
+    //             email: destructedUserData.userEmail,
+    //             username: destructedUserData.userUsername,
+    //             password: destructedUserData.userPass,
+    //             name: {
+    //                 firstname: destructedUserData.userFirstname,
+    //                 lastname:destructedUserData.userLastname,
+    //             },
+    //             address:
+    //                 {
+    //                     city: destructedUserData.userCity,
+    //                     street: destructedUserData.userStreet,
+    //                     number: destructedUserData.userStreetNumber,
+    //                     zipcode: destructedUserData.userZipcode,
+    //                     geolocation:
+    //                         {
+    //                             lat :  destructedUserData.lAt,
+    //                             long : destructedUserData.lOng,
+    //
+    //                         }
+    //                 },
+    //
+    //             phone:destructedUserData.userTel,
+    //         }
+    //         )
+    //
+    //
+    // }}, [destructedUserData, form])
 
 
     const onEditProfile = (values) => {
