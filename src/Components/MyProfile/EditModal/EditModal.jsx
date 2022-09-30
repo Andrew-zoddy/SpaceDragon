@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Col, Form, Input, Modal, Row} from 'antd';
 import {useDispatch} from "react-redux";
-import {useEffect} from "react";
+
 import {editUser} from "../../../Redux/usersReducer";
 
 
