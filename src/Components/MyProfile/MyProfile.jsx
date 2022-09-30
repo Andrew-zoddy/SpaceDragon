@@ -1,23 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import css from './MyProfile.module.scss'
 import profileImage from '../../images/profile_image.jpeg'
 import Mybutton from "../UI_Elements/Mybutton";
+import EditModal from "./EditModal/EditModal";
 
 
 const MyProfile = ({userData}) => {
 
+    const [formVisible, setFormVisible] = useState(false)
+
+
     const {
         email: userEmail = '',
         username: userUsername = '',
+        password: userPass = '',
         name: {
             firstname: userFirstname = '',
             lastname: userLastname = '',
         } = {},
         address: {
             city: userCity = '',
+            street: userStreet =  '',
+            number: userStreetNumber = 0,
+            zipcode: userZipcode = '',
+            geolocation:
+                {
+                lat: lAt = '',
+                long: lOng = '',
+                 } = {},
         } ={},
         phone: userTel = '',
+        id: userId = '',
     } = userData || {}
+
+    const destructedUserData = {userEmail,userUsername, userPass, userFirstname,userLastname, userCity, userStreet, userStreetNumber, userZipcode, lAt, lOng ,  userTel, userId,}
+
+
 
     return (
         <div className={css.profile_wrapper}>
@@ -64,7 +82,7 @@ const MyProfile = ({userData}) => {
                         </table>
 
                         <div className={css.buttons_block}>
-                            <Mybutton>Edit Profile</Mybutton>
+                            <Mybutton><span onClick={() => setFormVisible(true)}>Edit Profile</span></Mybutton>
                             <Mybutton>Delete Profile</Mybutton>
                         </div>
 
@@ -75,6 +93,12 @@ const MyProfile = ({userData}) => {
                 <div className={css.image_block}>
                     <img className={css.image_item} src={profileImage} alt="users_image"/>
                 </div>
+                <EditModal
+                    formVisible={formVisible}
+                    setFormVisible={setFormVisible}
+                    destructedUserData={destructedUserData}
+
+                />
             </div>
         </div>
     );

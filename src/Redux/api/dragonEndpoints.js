@@ -17,6 +17,11 @@ export const dragonAPI = {
     getUser() {
         return axios.get('https://fakestoreapi.com/users/1')
             .then(response => response)
-    }
+    },
+    updateUser(userParams,id) {
+
+        return axios.put(`https://fakestoreapi.com/users/${id}`, {...userParams})
+            .then(response => response)
+    },
 }
 

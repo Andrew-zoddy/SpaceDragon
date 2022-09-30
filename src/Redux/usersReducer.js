@@ -20,7 +20,7 @@ export const usersReducer = (state = initialState, action) => {
     }
 };
 
-// thunk
+// thunk gets users data
 export const getUserData = () => async (dispatch) => {
     try {
         dispatch(setError(''))
@@ -34,10 +34,29 @@ export const getUserData = () => async (dispatch) => {
         dispatch(setError(error))
     }
 };
- //action
+ //action to set users data
 export const setUser = (data) => {
     return {
         type: SET_USERS_DATA,
         payload: data
     }
 }
+
+// updating user thunk
+
+export const editUser = (userParams, id) => async (dispatch) => {
+    try {
+        dispatch(setError(''))
+        dispatch(setSuccess(''))
+        const response = await dragonAPI.updateUser(userParams, id);
+        if (response.status === 200) {
+            dispatch(setSuccess(`Very  successfully edited ${response.data.title} =).`))
+            dispatch(getUserData())
+
+
+        }
+    } catch (error) {
+        dispatch(setError(error))
+
+    }
+};

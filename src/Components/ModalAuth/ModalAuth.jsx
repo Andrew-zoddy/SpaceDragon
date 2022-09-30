@@ -8,6 +8,7 @@ import {loggingIn} from "../../Redux/appReducer";
 const ModalAuth = ({setModalVisible}) => {
 
     const dispatch = useDispatch()
+    const [form] = Form.useForm()
 
 
     const onFinish = (values) => {
@@ -25,6 +26,7 @@ const ModalAuth = ({setModalVisible}) => {
             <div onClick={(e) => e.stopPropagation()} className={css.modal_container}>
 
                 <Form
+                    form={form}
                     name="basic"
                     labelCol={{
                         span: 7,
