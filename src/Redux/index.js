@@ -6,9 +6,8 @@ import {usersReducer} from "./usersReducer";
 
 export const rootReducer = combineReducers({
     dragonData: dragonReducer,
-    app : appReducer,
+    app: appReducer,
     user: usersReducer,
-
 
 
 });

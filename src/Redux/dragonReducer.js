@@ -29,13 +29,13 @@ export const getDragonsData = () => async (dispatch) => {
         dispatch(setError(''))
         dispatch(setSuccess(''))
         dispatch(setLoading(true))
-            const response = await dragonAPI.getDragonData();
-            if (response.status === 200) {
-                localStorage.setItem('dragonData', JSON.stringify(response.data));
-                dispatch(setDragon(response.data))
-                dispatch(setLoading(false))
-                dispatch(setSuccess('Dragons Loaded!)'))
-            }
+        const response = await dragonAPI.getDragonData();
+        if (response.status === 200) {
+            localStorage.setItem('dragonData', JSON.stringify(response.data));
+            dispatch(setDragon(response.data))
+            dispatch(setLoading(false))
+            dispatch(setSuccess('Dragons Loaded!)'))
+        }
 
 
     } catch (error) {
@@ -58,12 +58,12 @@ export const getAllDragonsData = () => async (dispatch) => {
         dispatch(setSuccess(''))
         // setting time out for emulating server delay (just for making spinner visible)
 
-            const response = await dragonAPI.getAllDragons();
-            if (response.status === 200) {
-                localStorage.setItem('allDragonsData', JSON.stringify(response.data));
-                dispatch(setAllDragons(response.data))
+        const response = await dragonAPI.getAllDragons();
+        if (response.status === 200) {
+            localStorage.setItem('allDragonsData', JSON.stringify(response.data));
+            dispatch(setAllDragons(response.data))
 
-            }
+        }
 
 
     } catch (error) {

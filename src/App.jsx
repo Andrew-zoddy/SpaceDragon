@@ -52,7 +52,7 @@ const App = () => {
     useEffect(() => {
         if (!isAuth) return
         dispatch(getUserData())
-    },[dispatch, isAuth])
+    }, [dispatch, isAuth])
     //Success tracking
     useEffect(() => {
         if (!success) return
@@ -85,7 +85,7 @@ const App = () => {
             />
             {modalVisible && <ModalAuth setModalVisible={setModalVisible}/>}
             {loading ? '' : <Routes>
-                <Route element={<WelcomeMessage />} exact path={'/'}/>
+                <Route element={<WelcomeMessage/>} exact path={'/'}/>
                 <Route
                     element={
                         <MainPage
@@ -107,7 +107,7 @@ const App = () => {
                         />
                 } exact path={'/dragonList'}
                 />
-                <Route element={<MyProfile userData={userData} />} exact path={'/myProfile'}/>
+                <Route element={<MyProfile userData={userData}/>} exact path={'/myProfile'}/>
                 <Route element={<div style={{textAlign: "center", fontSize: '2rem', margin: '25%'}}>ERROR 404 - page not
                     found</div>}
                        path={'/*'}/>

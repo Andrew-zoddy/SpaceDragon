@@ -21,7 +21,6 @@ const MainPage = ({dragonData}) => {
     }
 
 
-
     return (
 
         <div>

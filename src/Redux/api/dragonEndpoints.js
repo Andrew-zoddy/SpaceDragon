@@ -6,7 +6,6 @@ import axios from "axios";
 //     let decoded = jwt_decode(token.token);
 
 
-
 export const dragonAPI = {
 
     getDragonData() {
@@ -18,7 +17,10 @@ export const dragonAPI = {
             .then(response => response)
     },
     logIn(userParams) {
-        return axios.post('https://fakestoreapi.com/auth/login', {username: userParams.username, password: userParams.password} )
+        return axios.post('https://fakestoreapi.com/auth/login', {
+            username: userParams.username,
+            password: userParams.password
+        })
             .then(response => response)
     },
 
@@ -26,24 +28,24 @@ export const dragonAPI = {
         return axios.get('https://fakestoreapi.com/users/1')
             .then(response => response)
     },
-    updateUser(userParams,id) {
+    updateUser(userParams, id) {
 
-        const updatedUserData =  {
-            email:'John@gmail.com',
+        const updatedUserData = {
+            email: 'John@gmail.com',
             username: userParams.username,
-            password:'m38rmF$',
-            name:{
+            password: 'm38rmF$',
+            name: {
                 firstname: userParams.name,
                 lastname: userParams.lastname
             },
-            address:{
+            address: {
                 city: userParams.address,
-                street:'7835 new road',
-                number:3,
-                zipcode:'12926-3874',
-                geolocation:{
-                    lat:'-37.3159',
-                    long:'81.1496'
+                street: '7835 new road',
+                number: 3,
+                zipcode: '12926-3874',
+                geolocation: {
+                    lat: '-37.3159',
+                    long: '81.1496'
                 }
             },
             phone: userParams.phone,

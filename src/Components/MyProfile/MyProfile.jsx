@@ -23,25 +23,38 @@ const MyProfile = ({userData}) => {
         } = {},
         address: {
             city: userCity = '',
-            street: userStreet =  '',
+            street: userStreet = '',
             number: userStreetNumber = 0,
             zipcode: userZipcode = '',
             geolocation:
                 {
-                lat: lAt = '',
-                long: lOng = '',
-                 } = {},
-        } ={},
+                    lat: lAt = '',
+                    long: lOng = '',
+                } = {},
+        } = {},
         phone: userTel = '',
         id: userId = '',
     } = userData || {}
 
-    const destructedUserData = {userEmail,userUsername, userPass, userFirstname,userLastname, userCity, userStreet, userStreetNumber, userZipcode, lAt, lOng ,  userTel, userId,}
+    const destructedUserData = {
+        userEmail,
+        userUsername,
+        userPass,
+        userFirstname,
+        userLastname,
+        userCity,
+        userStreet,
+        userStreetNumber,
+        userZipcode,
+        lAt,
+        lOng,
+        userTel,
+        userId,
+    }
 
     const onUserDelete = () => {
         dispatch(deleteUser(userId))
     }
-
 
 
     return (

@@ -1,5 +1,5 @@
 This App was created using create-react-app.
-Lin to app : https://coruscating-sprinkles-484913.netlify.app/
+Link to app : https://coruscating-sprinkles-484913.netlify.app
 The app is a single-page app about spaceships made by SpaceX.
 
 Used packages : antd design Library, axios, Redux (+thunk), sass, jwt-decode

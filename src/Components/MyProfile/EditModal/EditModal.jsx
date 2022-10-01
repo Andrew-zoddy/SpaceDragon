@@ -19,12 +19,10 @@ const EditModal = ({formVisible, setFormVisible, destructedUserData}) => {
                 username: destructedUserData.userUsername,
                 name: destructedUserData.userFirstname,
                 lastname: destructedUserData.userLastname,
-                address : destructedUserData.userCity,
+                address: destructedUserData.userCity,
                 phone: destructedUserData.userTel,
             }
         )
-
-
     }, [destructedUserData, form])
 
 

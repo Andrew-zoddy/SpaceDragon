@@ -39,16 +39,16 @@ export const loggingIn = (userParams) => async (dispatch) => {
         dispatch(setError(''))
         dispatch(setSuccess(''))
         dispatch(setLoading(true))
-            const response = await dragonAPI.logIn(userParams);
-            if (response.status === 200) {
-                dispatch(setAuth(true))
-                console.log(response)
-                localStorage.setItem('isAuth', JSON.stringify(true));
-                localStorage.setItem('token', JSON.stringify(response.data));
-                dispatch(setLoading(false))
-                dispatch(setSuccess(`Hello ${response.data.username}`))
+        const response = await dragonAPI.logIn(userParams);
+        if (response.status === 200) {
+            dispatch(setAuth(true))
+            console.log(response)
+            localStorage.setItem('isAuth', JSON.stringify(true));
+            localStorage.setItem('token', JSON.stringify(response.data));
+            dispatch(setLoading(false))
+            dispatch(setSuccess(`Hello ${response.data.username}`))
 
-            }
+        }
 
 
     } catch (error) {

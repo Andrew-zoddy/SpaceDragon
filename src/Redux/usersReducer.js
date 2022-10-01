@@ -2,7 +2,6 @@ import {setError, setSuccess} from "./appReducer";
 import {dragonAPI} from "./api/dragonEndpoints";
 
 
-
 const SET_USERS_DATA = 'SET_USERS_DATA';
 
 
@@ -34,7 +33,7 @@ export const getUserData = () => async (dispatch) => {
         dispatch(setError(error))
     }
 };
- //action to set users data
+//action to set users data
 export const setUser = (data) => {
     return {
         type: SET_USERS_DATA,
@@ -57,7 +56,7 @@ export const editUser = (userParams, id) => async (dispatch) => {
         dispatch(setError(error))
     }
 };
- // delete user
+// delete user
 export const deleteUser = (id) => async (dispatch) => {
     try {
         dispatch(setError(''))

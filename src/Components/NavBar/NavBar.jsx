@@ -53,7 +53,7 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     onClick={() => setShowBurgerVisible(true)}
                     className={css.burgerBtn_wrapper}>
                     {/*button toggle*/}
-                    {!showBurgerVisible ? <MenuOutlined/> : '' }
+                    {!showBurgerVisible ? <MenuOutlined/> : ''}
 
                 </div>
                 {
@@ -71,7 +71,9 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                         {
                             isAuth &&
                             <NavLink style={{color: 'whitesmoke'}} to={'/myProfile'}>
-                                <div onClick={onLinkClick} className={!isAuth ? css.menu_item_invisible : css.menu_item_burger}>Profile</div>
+                                <div onClick={onLinkClick}
+                                     className={!isAuth ? css.menu_item_invisible : css.menu_item_burger}>Profile
+                                </div>
                             </NavLink>
                         }
                         {!isAuth && !JSON.parse(localStorage.getItem('token'))
@@ -105,8 +107,10 @@ const NavBar = ({setOverViewVisible, setModalVisible}) => {
                     </NavLink>
                     {
                         isAuth &&
-                        <NavLink  to={'/myProfile'}>
-                            <div onClick={onLinkClick} className={!isAuth ? css.menu_item_invisible : css.menu_item}>Profile</div>
+                        <NavLink to={'/myProfile'}>
+                            <div onClick={onLinkClick}
+                                 className={!isAuth ? css.menu_item_invisible : css.menu_item}>Profile
+                            </div>
                         </NavLink>
                     }
                 </menu>

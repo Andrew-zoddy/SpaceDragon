@@ -5,7 +5,7 @@
   color: white;
   margin-bottom: 2rem;
 
-  .overview_title{
+  .overview_title {
     color: white;
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -14,11 +14,11 @@
     }
   }
 
-  .overview_text{
+  .overview_text {
 
     font-size: 1.5rem;
     line-height: 1.7rem;
-    font-family: Gothic,sans-serif;
+    font-family: Gothic, sans-serif;
     margin-bottom: 3rem;
     @media (max-width: 641px) {
       font-size: 1.1rem;
@@ -57,14 +57,16 @@
 
     .image_block {
       width: 100%;
+
       .image_item {
         object-fit: cover;
         width: 100%;
 
       }
     }
+
     @media (max-width: 641px) {
-     display: flex;
+      display: flex;
       flex-direction: column;
 
     }

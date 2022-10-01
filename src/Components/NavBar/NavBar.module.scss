@@ -10,9 +10,9 @@
     align-items: center;
     justify-content: space-between;
 
-  .nav_link_style{
-    color: white;
-  }
+    .nav_link_style {
+      color: white;
+    }
 
 
     .logo_block {
@@ -36,11 +36,13 @@
 
         margin-right: 2rem;
         text-transform: uppercase;
+
         &:hover {
           text-shadow: 1px 5px 20px white;
         }
       }
-      .menu_item_invisible{
+
+      .menu_item_invisible {
 
       }
 
