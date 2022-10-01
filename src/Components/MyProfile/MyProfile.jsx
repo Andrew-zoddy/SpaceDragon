@@ -3,10 +3,13 @@ import css from './MyProfile.module.scss'
 import profileImage from '../../images/profile_image.jpeg'
 import Mybutton from "../UI_Elements/Mybutton";
 import EditModal from "./EditModal/EditModal";
+import {useDispatch} from "react-redux";
+import {deleteUser} from "../../Redux/usersReducer";
 
 
 const MyProfile = ({userData}) => {
 
+    const dispatch = useDispatch()
     const [formVisible, setFormVisible] = useState(false)
 
 
@@ -34,6 +37,10 @@ const MyProfile = ({userData}) => {
     } = userData || {}
 
     const destructedUserData = {userEmail,userUsername, userPass, userFirstname,userLastname, userCity, userStreet, userStreetNumber, userZipcode, lAt, lOng ,  userTel, userId,}
+
+    const onUserDelete = () => {
+        dispatch(deleteUser(userId))
+    }
 
 
 
@@ -83,7 +90,7 @@ const MyProfile = ({userData}) => {
 
                         <div className={css.buttons_block}>
                             <Mybutton><span onClick={() => setFormVisible(true)}>Edit Profile</span></Mybutton>
-                            <Mybutton>Delete Profile</Mybutton>
+                            <Mybutton><span onClick={() => onUserDelete()}>Delete Profile</span></Mybutton>
                         </div>
 
 

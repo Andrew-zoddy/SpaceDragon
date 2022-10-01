@@ -39,18 +39,17 @@ export const loggingIn = (userParams) => async (dispatch) => {
         dispatch(setError(''))
         dispatch(setSuccess(''))
         dispatch(setLoading(true))
-        // setting time out for emulating server delay
-        setTimeout(async () => {
             const response = await dragonAPI.logIn(userParams);
             if (response.status === 200) {
                 dispatch(setAuth(true))
+                console.log(response)
                 localStorage.setItem('isAuth', JSON.stringify(true));
                 localStorage.setItem('token', JSON.stringify(response.data));
                 dispatch(setLoading(false))
-                dispatch(setSuccess('Hello John)'))
+                dispatch(setSuccess(`Hello ${response.data.username}`))
 
             }
-        }, 1000);
+
 
     } catch (error) {
         dispatch(setError(error))

@@ -42,21 +42,33 @@ export const setUser = (data) => {
     }
 }
 
-// updating user thunk
-
+// update user thunk
 export const editUser = (userParams, id) => async (dispatch) => {
     try {
         dispatch(setError(''))
         dispatch(setSuccess(''))
         const response = await dragonAPI.updateUser(userParams, id);
         if (response.status === 200) {
-            dispatch(setSuccess(`Very  successfully edited ${response.data.title} =).`))
             dispatch(getUserData())
-
-
+            dispatch(setSuccess(`Very  successfully updated =) `))
+            console.log(response.data)
         }
     } catch (error) {
         dispatch(setError(error))
-
+    }
+};
+ // delete user
+export const deleteUser = (id) => async (dispatch) => {
+    try {
+        dispatch(setError(''))
+        dispatch(setSuccess(''))
+        const response = await dragonAPI.deleteUser(id);
+        if (response.status === 200) {
+            dispatch(getUserData())
+            dispatch(setSuccess(`Deleted user ${response.data.username} `))
+            console.log(response.data)
+        }
+    } catch (error) {
+        dispatch(setError(error))
     }
 };

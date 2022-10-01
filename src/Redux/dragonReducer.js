@@ -29,17 +29,14 @@ export const getDragonsData = () => async (dispatch) => {
         dispatch(setError(''))
         dispatch(setSuccess(''))
         dispatch(setLoading(true))
-        // setting time out for emulating server delay
-        setTimeout(async() =>  {
             const response = await dragonAPI.getDragonData();
             if (response.status === 200) {
                 localStorage.setItem('dragonData', JSON.stringify(response.data));
                 dispatch(setDragon(response.data))
                 dispatch(setLoading(false))
                 dispatch(setSuccess('Dragons Loaded!)'))
-
             }
-        }, 1000);
+
 
     } catch (error) {
         dispatch(setError(error))

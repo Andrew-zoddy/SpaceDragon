@@ -1,54 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Col, Form, Input, Modal, Row} from 'antd';
 import {useDispatch} from "react-redux";
 
 import {editUser} from "../../../Redux/usersReducer";
 
 
-const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
+const EditModal = ({formVisible, setFormVisible, destructedUserData}) => {
 
     const dispatch = useDispatch();
 
     const [form] = Form.useForm()
 
 
-    // //set values into form
-    // useEffect(() => {
-    //
-    //     {
-    //
-    //         form.setFieldsValue({
-    //             email: destructedUserData.userEmail,
-    //             username: destructedUserData.userUsername,
-    //             password: destructedUserData.userPass,
-    //             name: {
-    //                 firstname: destructedUserData.userFirstname,
-    //                 lastname:destructedUserData.userLastname,
-    //             },
-    //             address:
-    //                 {
-    //                     city: destructedUserData.userCity,
-    //                     street: destructedUserData.userStreet,
-    //                     number: destructedUserData.userStreetNumber,
-    //                     zipcode: destructedUserData.userZipcode,
-    //                     geolocation:
-    //                         {
-    //                             lat :  destructedUserData.lAt,
-    //                             long : destructedUserData.lOng,
-    //
-    //                         }
-    //                 },
-    //
-    //             phone:destructedUserData.userTel,
-    //         }
-    //         )
-    //
-    //
-    // }}, [destructedUserData, form])
+    //set values into form
+    useEffect(() => {
+        form.setFieldsValue(
+            {
+                username: destructedUserData.userUsername,
+                name: destructedUserData.userFirstname,
+                lastname: destructedUserData.userLastname,
+                address : destructedUserData.userCity,
+                phone: destructedUserData.userTel,
+            }
+        )
+
+
+    }, [destructedUserData, form])
 
 
     const onEditProfile = (values) => {
-       dispatch(editUser(values, destructedUserData.userId))
+        dispatch(editUser(values, destructedUserData.userId))
         setFormVisible(false)
     }
 
@@ -62,6 +43,7 @@ const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
             destroyOnClose={true}
         >
             <Form
+
                 form={form}
                 name="basic"
                 // labelCol={{
@@ -71,7 +53,9 @@ const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
                 //     span: 16,
                 // }}
                 initialValues={
-                    {}
+                    {
+                        name: 'name'
+                    }
 
                 }
                 onFinish={onEditProfile}
@@ -104,7 +88,7 @@ const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
                 </Form.Item>
                 <Form.Item
                     label="Last Name"
-                    name="name"
+                    name="lastname"
                     rules={[
                         {
                             required: true,
@@ -112,7 +96,7 @@ const EditModal = ({formVisible,setFormVisible,destructedUserData}) => {
                         },
                     ]}
                 >
-                    <Input type={'text'} />
+                    <Input type={'text'}/>
                 </Form.Item>
 
                 <Form.Item

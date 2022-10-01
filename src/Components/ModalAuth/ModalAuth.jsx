@@ -21,6 +21,7 @@ const ModalAuth = ({setModalVisible}) => {
         console.log('Failed:', errorInfo);
     };
 
+
     return (
         <div onClick={() => setModalVisible(false)} className={css.modal_wrapper}>
             <div onClick={(e) => e.stopPropagation()} className={css.modal_container}>
