@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-// const reaqestedUserId = () => {
+// const requestedUserId = () => {
 //     let token = localStorage.getItem('token')
 //     let decoded = jwt_decode(token.token);
 
