@@ -1,8 +1,9 @@
 This App was created using create-react-app.
-Link to app : https://coruscating-sprinkles-484913.netlify.app
-The app is a single-page app about spaceships made by SpaceX.
+It's  a single-page app about spaceships made by SpaceX.
+Link to app : https://dragon-one-react.netlify.app
 
-Used packages : antd design Library, axios, Redux (+thunk), sass, jwt-decode
+
+Used packages : antd design Library, axios, Redux (+thunk), sass, and other standard for react-app.
 
 
 Used APIs:  
@@ -10,7 +11,7 @@ Used APIs:
             https://api.spacexdata.com/v4/dragons - all dragons data
             https://fakestoreapi.com/docs - User data and login implementation
 
-Unfortunately, fakeStoreAPI doesnt give an opportunity to update/patch data, so none of the data can be changed. 
+Unfortunately, fakeStoreAPI doesn't give an opportunity to update/patch data, so none of the data can be changed. 
 But the logic is written so as if it works.
 
 
@@ -19,10 +20,10 @@ To run tests : "npm run test"
 
 As for tests - there are no any implemented - 
 
-For the deploy option - GitHub repository is used,
-after each push to master/main branch -
-the automatic deployment to Netlify is being made right after “tests” are done.
-In .github folder - there’s a workflow folder - with yml file,
+For the deployment option - GitHub repository is used, and Netlify services.
+After each push to master/main branch -
+the automatic deployment to Netlify is being made right after “tests” on gitHub "Actions" are done.
+In .GitHub folder - there’s a workflow folder - with yml file,
 in which settings for Github Actions are placed.
 After that -  deployment process starts.
 In such way CI/CD is implemented
