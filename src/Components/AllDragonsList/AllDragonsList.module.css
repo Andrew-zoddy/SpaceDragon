@@ -1,0 +1,36 @@
+.allDragons_wrapper {
+  padding-top: 1rem;
+}
+.allDragons_wrapper .item_container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-content: center;
+  justify-items: center;
+  padding: 2rem;
+}
+.allDragons_wrapper .item_container:hover {
+  background-color: #817e7e;
+  color: black;
+  box-shadow: 1px 1px 15px grey;
+  cursor: pointer;
+}
+.allDragons_wrapper .item_container .item_title {
+  font-size: 2rem;
+}
+.allDragons_wrapper .item_container .item_description {
+  font-size: 1.2rem;
+}
+@media (max-width: 641px) {
+  .allDragons_wrapper .item_container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+.allDragons_wrapper .item_image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  padding: 1rem;
+}/*# sourceMappingURL=AllDragonsList.module.css.map */

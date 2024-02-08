@@ -1,0 +1,9 @@
+.myBtn {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background: transparent;
+  color: white;
+}
+.myBtn:hover {
+  text-shadow: 1px 1px 10px white;
+}/*# sourceMappingURL=MyButton.module.css.map */

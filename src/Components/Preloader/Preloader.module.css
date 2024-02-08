@@ -1,0 +1,8 @@
+.preloader_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Preloader.module.css.map */

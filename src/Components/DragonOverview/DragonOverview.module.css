@@ -1,0 +1,61 @@
+.overview_wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+.overview_wrapper .overview_title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 641px) {
+  .overview_wrapper .overview_title {
+    font-size: 1.8rem;
+  }
+}
+.overview_wrapper .overview_text {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-family: Gothic, sans-serif;
+  margin-bottom: 3rem;
+}
+@media (max-width: 641px) {
+  .overview_wrapper .overview_text {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+}
+.overview_wrapper .overview_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.overview_wrapper .overview_container .overview_table {
+  text-transform: uppercase;
+}
+.overview_wrapper .overview_container .overview_table .table_body {
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.overview_wrapper .overview_container .overview_table .table_body .table_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid lightslategrey;
+  padding: 1rem;
+}
+.overview_wrapper .overview_container .image_block {
+  width: 100%;
+}
+.overview_wrapper .overview_container .image_block .image_item {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 641px) {
+  .overview_wrapper .overview_container {
+    display: flex;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=DragonOverview.module.css.map */

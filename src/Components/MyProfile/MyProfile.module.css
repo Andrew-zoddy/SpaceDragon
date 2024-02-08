@@ -1,0 +1,45 @@
+.profile_wrapper {
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(16, 68, 50, 0.4);
+  height: 100vh;
+}
+.profile_wrapper .profile_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+.profile_wrapper .profile_container .info_block {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  font-size: 1.7rem;
+}
+.profile_wrapper .profile_container .info_block .users_info {
+  width: 50vh;
+}
+.profile_wrapper .profile_container .info_block .users_info .table_wrap {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.profile_wrapper .profile_container .info_block .users_info .table_wrap .table_body .table_row .table_item {
+  border-bottom: 1px solid grey;
+}
+.profile_wrapper .profile_container .info_block .users_info .buttons_block {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.profile_wrapper .profile_container .image_block .image_item {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 823px) {
+  .profile_wrapper .profile_container {
+    display: flex;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=MyProfile.module.css.map */
