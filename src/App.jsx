@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import NavBar from "./Components/NavBar/NavBar";
 import './App.css'
-import 'antd/dist/reset.css';
+// import 'antd/dist/reset.css';
 import {message} from "antd";
 import {Route, Routes} from "react-router-dom";
 import MainPage from "./Components/MainPage/MainPage";

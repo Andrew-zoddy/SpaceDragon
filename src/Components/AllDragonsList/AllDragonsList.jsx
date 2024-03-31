@@ -1,5 +1,5 @@
 import React from 'react';
-import 'antd/dist/reset.css';
+// import 'antd/dist/reset.css';
 import css from './AllDragonsList.module.scss'
 
 
