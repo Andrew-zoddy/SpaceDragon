@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './DragonOverview.module.scss'
 import {Collapse, Spin,} from "antd";
-import 'antd/dist/antd.dark.css';
+import 'antd/dist/reset.css';
 
 const {Panel} = Collapse;
 
