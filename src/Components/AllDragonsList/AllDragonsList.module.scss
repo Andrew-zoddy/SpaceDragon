@@ -3,10 +3,11 @@
 
   .item_container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 2fr;
     align-content: center;
     justify-items: center;
     padding: 2rem;
+    background-color: #8f808046;
 
     &:hover {
       background-color: #817e7e;
@@ -34,7 +35,7 @@
   .item_image {
     object-fit: cover;
     width: 100%;
-    //height: 40vh;
+    height: 40vh;
     padding: 1rem;
   }
 
