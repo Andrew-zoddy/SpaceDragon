@@ -24,7 +24,7 @@ const MyProfile = ({userData}) => {
         address: {
             city: userCity = '',
             street: userStreet = '',
-            number: userStreetNumber = 0,
+            number: userStreetNumber = '',
             zipcode: userZipcode = '',
             geolocation:
                 {
