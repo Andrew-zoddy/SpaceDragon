@@ -3,10 +3,11 @@
 }
 .allDragons_wrapper .item_container {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 2fr;
   align-content: center;
   justify-items: center;
   padding: 2rem;
+  background-color: rgba(143, 128, 128, 0.2745098039);
 }
 .allDragons_wrapper .item_container:hover {
   background-color: #817e7e;
@@ -32,5 +33,6 @@
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  height: 40vh;
   padding: 1rem;
 }/*# sourceMappingURL=AllDragonsList.module.css.map */

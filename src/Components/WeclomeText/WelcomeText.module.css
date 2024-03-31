@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 .welcome_text {
   padding-top: 10rem;
-  height: 92vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-family: Roboto, sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   animation: myTextGlow 1s infinite;
@@ -20,12 +21,12 @@
   bottom: 100px;
   display: block;
   text-align: center;
-  font-size: 20px;
+  font-size: 40px;
   z-index: 100;
   text-decoration: none;
   text-shadow: 0;
-  width: 13px;
-  height: 13px;
+  width: 23px;
+  height: 23px;
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
   z-index: 9;
