@@ -49,7 +49,7 @@ export const editUser = (userParams, id) => async (dispatch) => {
         const response = await dragonAPI.updateUser(userParams, id);
         if (response.status === 200) {
             dispatch(getUserData())
-            dispatch(setSuccess(`Very  successfully updated =) `))
+            dispatch(setSuccess(`updated successfully`))
             console.log(response.data)
         }
     } catch (error) {

@@ -42,7 +42,7 @@ export const loggingIn = (userParams) => async (dispatch) => {
         const response = await dragonAPI.logIn(userParams);
         if (response.status === 200) {
             dispatch(setAuth(true))
-            console.log('thil log is from appReducer')
+            console.log('this log is from appReducer')
             localStorage.setItem('isAuth', JSON.stringify(true));
             localStorage.setItem('token', JSON.stringify(response.data));
             dispatch(setLoading(false))

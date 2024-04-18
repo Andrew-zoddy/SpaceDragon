@@ -70,6 +70,7 @@ const App = () => {
         setOverViewVisible(true)
         setClickedDragonData(chosenDragon)
     }
+    
 
     // console.log(isAuth)
 

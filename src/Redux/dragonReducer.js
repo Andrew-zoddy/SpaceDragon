@@ -34,7 +34,7 @@ export const getDragonsData = () => async (dispatch) => {
             localStorage.setItem('dragonData', JSON.stringify(response.data));
             dispatch(setDragon(response.data))
             dispatch(setLoading(false))
-            dispatch(setSuccess('Dragons Loaded!)'))
+            dispatch(setSuccess('Dragons Loaded'))
         }
 
 
