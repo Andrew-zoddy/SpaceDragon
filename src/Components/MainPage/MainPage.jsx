@@ -3,7 +3,7 @@ import WelcomeText from "../WeclomeText/WelcomeText";
 import DragonOverview from "../DragonOverview/DragonOverview";
 import Slider from "../Carousel/Carousel";
 import {Divider} from "antd";
-import 'antd/dist/antd.dark.css';
+// import 'antd/dist/reset.css';
 
 
 const MainPage = ({dragonData}) => {
